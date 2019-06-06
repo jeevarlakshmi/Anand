@@ -1,0 +1,16 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Jun 03 14:44:00 IST 2019
+https\://oss.sonatype.org/content/repositories/snapshots/.error=
+file\:C\:\\Turner\\SeleniumAutomation\\NewSourceDownload\\repo/.error=
+http\://repository-perfectomobile.forge.cloudbees.com/public/.lastUpdated=1547016052290
+file\:C\:\\Turner\\SeleniumAutomation\\NewSourceWire\\repo/.error=
+http\://download.java.net/maven/2/.error=
+file\:C\:\\Turner\\SeleniumAutomation\\NewSourceDownload\\repo/.lastUpdated=1554372388491
+file\:C\:\\Turner\\SeleniumAutomation\\CNN\ Project\\CNN\ Project\\cnn\\repo/.lastUpdated=1547016049036
+https\://repo.maven.apache.org/maven2/.lastUpdated=1547016052465
+https\://oss.sonatype.org/content/repositories/snapshots/.lastUpdated=1559553240056
+file\:C\:\\Turner\\SeleniumAutomation\\CNN\ Project\\CNN\ Project\\cnn\\repo/.error=
+http\://download.java.net/maven/2/.lastUpdated=1547016051978
+file\:C\:\\Turner\\SeleniumAutomation\\NewSourceWire\\repo/.lastUpdated=1559553240219
+https\://repo.maven.apache.org/maven2/.error=
+http\://repository-perfectomobile.forge.cloudbees.com/public/.error=

@@ -1,0 +1,300 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.turner.application</groupId>
+  <artifactId>NewSourceWire</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <name>cnn</name>
+  <url>http://maven.apache.org</url>
+
+  <developers>
+		
+		<developer>
+			<id>Anand</id>
+			<name>Anand</name>
+			<email>anandbala@hcl.com</email>
+			<organization>HCL</organization>
+			<roles>
+				<role>Automation Tester</role>
+			</roles>
+		</developer>
+	</developers>
+	<!--****************************** BUILD ****************************** -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>validate</id>
+						<phase>verify</phase>
+					</execution>
+				</executions>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<consoleOutput>true</consoleOutput>
+					<failsOnError>true</failsOnError>
+					<linkXRef>false</linkXRef>
+				</configuration>
+				<goals>
+					<goal>check</goal>
+				</goals>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.18.1</version>
+				<configuration>
+					<suiteXmlFiles>
+						<!-- <suiteXmlFile>testng.xml</suiteXmlFile> -->
+						<suiteXmlFile>TestNgD.xml</suiteXmlFile>
+						<suiteXmlFile>TestNgM.xml</suiteXmlFile>
+					</suiteXmlFiles>
+					<properties>
+						<property>
+							<name>suitethreadpoolsize</name>
+							<value>12</value>
+						</property>
+						<property>
+							<name>usedefaultlisteners</name>
+							<value>true</value> <!-- disabling default listeners is optional -->
+						</property>
+						<property>
+							<name>listener</name>
+							<value>org.uncommons.reportng.HTMLReporter,
+								org.uncommons.reportng.JUnitXMLReporter</value>
+						</property>
+						<property>
+							<name>reporter</name>
+							<value>listenReport.Reporter</value>
+						</property>
+					</properties>
+					<reportsDirectory>target/</reportsDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.4.0</version>
+				<executions>
+					<execution>
+						<id>xml-gen</id>
+						<goals>
+							<goal>java</goal>
+						</goals>
+
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>com.turner.base.utilities.support.XmlGenerator</mainClass>
+					<systemProperties>
+						<systemProperty>
+							<key>ResFolder</key>
+							<value>${ResFolder}</value>
+						</systemProperty>
+					</systemProperties>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<fork>true</fork>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.2</version>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!--****************************** REPOSITORIES ****************************** -->
+	<repositories>
+		<repository>
+			<!--mvn deploy:deploy-file -Durl=file:"D:\AutomationScripts\Selenium\BitBucket\UM 
+				Framework\UmFrameworkHybrid\repo" -Dfile="D:\workspace\testng_build\testng-master\build\libs\testng-master-6.9.7-SNAPSHOT.jar" 
+				-DgroupId=org.testng -DartifactId=testng -Dpackaging=jar -Dversion=6.9.7-UM -->
+			<id>project.local</id>
+			<name>project</name>
+			<url>file:${project.basedir}\repo</url>
+		</repository>
+		<repository>
+			<id>java-net</id>
+			<url>http://download.java.net/maven/2</url>
+		</repository>
+		
+		<repository>
+			<id>project.localUM</id>
+			<name>project</name>
+			<url>file:${project.basedir}\repo</url>
+		</repository>
+	</repositories>
+
+	<!--****************************** DEPENDENCIES ****************************** -->
+	<dependencies>
+		<!-- TestNg Framework -->
+		<!-- <dependency> <groupId>org.testng</groupId> <artifactId>testng</artifactId> 
+			<version>6.9.7-UM-1.0</version> </dependency> -->
+		<dependency>
+			<groupId>com.beust</groupId>
+			<artifactId>jcommander</artifactId>
+			<version>1.48</version>
+		</dependency>
+
+		<!-- Galen - Layout Testing Framework -->
+		<dependency>
+			<groupId>com.galenframework</groupId>
+			<artifactId>galen-java-support</artifactId>
+			<version>2.0.4</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-simple</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.sikuli/sikuli-api -->
+		<dependency>
+		    <groupId>com.sikulix</groupId>
+		    <artifactId>sikulixapi</artifactId>
+		    <version>1.1.0</version>
+		</dependency>
+	<!-- Apache POI - Excel Reader -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.12</version>
+		</dependency>
+
+		<!-- TestNg Reports -->
+		<dependency>
+			<groupId>org.uncommons</groupId>
+			<artifactId>reportng</artifactId>
+			<version>1.1.2</version>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.testng</groupId>
+					<artifactId>testng</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.4</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>3.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<!-- Perfecto -->
+	
+		<!-- Appium -->
+		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>3.2.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.httpcomponents</groupId>
+					<artifactId>httpmime</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.httpcomponents</groupId>
+					<artifactId>httpclient</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<version>4.5</version>
+		</dependency>
+
+		<!-- Crawler -->
+		<dependency>
+			<groupId>edu.uci.ics</groupId>
+			<artifactId>crawler4j</artifactId>
+			<version>4.1</version>
+		</dependency>
+		<!-- JSON -->
+		<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+		<!-- <dependency> <groupId>com.relevantcodes</groupId> <artifactId>extentreports</artifactId> 
+			<version>2.41.2</version> </dependency> -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>3.0.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.39</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.7.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.restassured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>2.9.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<!-- <dependency> <groupId>org.seleniumhq.selenium</groupId> <artifactId>selenium-java</artifactId> 
+			<version>2.53.1</version> </dependency> -->
+			<dependency>
+			<groupId>de.sstoehr</groupId>
+			<artifactId>har-reader</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+		<!-- UM Framework by HCL Chennai -->
+		<dependency>
+			<groupId>com.turner.base</groupId>
+			<artifactId>baseframework</artifactId>
+			<version>3.0</version>
+		</dependency>
+	</dependencies>
+</project>

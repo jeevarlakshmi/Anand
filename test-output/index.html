@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>TestNG new reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Desktop" class="navigator-link">
+              <span class="suite-name border-skipped">Desktop</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Desktop" class="navigator-link ">
+                    <span>C:\Turner\SeleniumAutomation\CNN Project\CNN Project\cnn\TestNgD.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Desktop" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Desktop" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Desktop" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Desktop" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Desktop" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Desktop" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">4 methods,  4 skipped,  </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Desktop" class="hide-methods skipped suite-Desktop"> (hide)</a> <!-- hide-methods skipped suite-Desktop -->
+                      <a href="#" panel-name="suite-Desktop" class="show-methods skipped suite-Desktop"> (show)</a> <!-- show-methods skipped suite-Desktop -->
+                    </span>
+                    <div class="method-list-content skipped suite-Desktop">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Desktop" title="com.turner.cnn.testscenarios.UserAuthorization" class="method navigator-link" hash-for-method="adminUserAuthorization({Res_Width=, Description=Login with Admin user and validate his authorization, OS=Windows, Platform=...)">adminUserAuthorization({Res_Width=, Description=Login with Admin user and validate his authorization, OS=Windows, Platform=...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Desktop" title="com.turner.cnn.testscenarios.UserAuthorization" class="method navigator-link" hash-for-method="downloadUserAuthorization({Res_Width=, Description=Login with Download user and validate his authorization, OS=Windows, Platfo...)">downloadUserAuthorization({Res_Width=, Description=Login with Download user and validate his authorization, OS=Windows, Platfo...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Desktop" title="com.turner.cnn.testscenarios.UserAuthorization" class="method navigator-link" hash-for-method="embedUserAuthorization({Res_Width=, Description=Login with Embed user and validate his authorization, OS=Windows, Platform=...)">embedUserAuthorization({Res_Width=, Description=Login with Embed user and validate his authorization, OS=Windows, Platform=...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Desktop" title="com.turner.cnn.testscenarios.UserAuthorization" class="method navigator-link" hash-for-method="wireUserAuthorization({Res_Width=, Description=Login with Wire user and validate his authorization, OS=Windows, Platform=D...)">wireUserAuthorization({Res_Width=, Description=Login with Wire user and validate his authorization, OS=Windows, Platform=D...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Desktop -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Desktop" class="panel Desktop">
+          <div class="suite-Desktop-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.turner.cnn.testscenarios.UserAuthorization</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="adminUserAuthorization({Res_Width=, Description=Login with Admin user and validate his authorization, OS=Windows, Platform=...)">
+                  </a> <!-- adminUserAuthorization({Res_Width=, Description=Login with Admin user and validate his authorization, OS=Windows, Platform=...) -->
+                  <span class="method-name">adminUserAuthorization</span>
+                  <span class="parameters">({Res_Width=, Description=Login with Admin user and validate his authorization, OS=Windows, Platform=Desktop, Version=null, Driver=Chrome, Environment=QA, Screenshot for Pass=NO, Res_Height=, Browser=Chrome}, {Single=iteration}, org.testng.TestRunner@196a42c3)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="downloadUserAuthorization({Res_Width=, Description=Login with Download user and validate his authorization, OS=Windows, Platfo...)">
+                  </a> <!-- downloadUserAuthorization({Res_Width=, Description=Login with Download user and validate his authorization, OS=Windows, Platfo...) -->
+                  <span class="method-name">downloadUserAuthorization</span>
+                  <span class="parameters">({Res_Width=, Description=Login with Download user and validate his authorization, OS=Windows, Platform=Desktop, Version=null, Driver=Chrome, Environment=QA, Screenshot for Pass=NO, Res_Height=, Browser=Chrome}, {Single=iteration}, org.testng.TestRunner@196a42c3)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="embedUserAuthorization({Res_Width=, Description=Login with Embed user and validate his authorization, OS=Windows, Platform=...)">
+                  </a> <!-- embedUserAuthorization({Res_Width=, Description=Login with Embed user and validate his authorization, OS=Windows, Platform=...) -->
+                  <span class="method-name">embedUserAuthorization</span>
+                  <span class="parameters">({Res_Width=, Description=Login with Embed user and validate his authorization, OS=Windows, Platform=Desktop, Version=null, Driver=Chrome, Environment=QA, Screenshot for Pass=NO, Res_Height=, Browser=Chrome}, {Single=iteration}, org.testng.TestRunner@196a42c3)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="wireUserAuthorization({Res_Width=, Description=Login with Wire user and validate his authorization, OS=Windows, Platform=D...)">
+                  </a> <!-- wireUserAuthorization({Res_Width=, Description=Login with Wire user and validate his authorization, OS=Windows, Platform=D...) -->
+                  <span class="method-name">wireUserAuthorization</span>
+                  <span class="parameters">({Res_Width=, Description=Login with Wire user and validate his authorization, OS=Windows, Platform=Desktop, Version=null, Driver=Chrome, Environment=QA, Screenshot for Pass=NO, Res_Height=, Browser=Chrome}, {Single=iteration}, org.testng.TestRunner@196a42c3)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Desktop-class-skipped -->
+        </div> <!-- panel Desktop -->
+        <div panel-name="test-xml-Desktop" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Turner\SeleniumAutomation\CNN Project\CNN Project\cnn\TestNgD.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite thread-count=&quot;12&quot; parallel=&quot;tests&quot; data-provider-thread-count=&quot;12&quot; name=&quot;Desktop&quot;&gt;
+  &lt;parameter name=&quot;ProjectName&quot; value=&quot;cnn&quot;/&gt;
+  &lt;test thread-count=&quot;16&quot; parallel=&quot;methods&quot; name=&quot;Browser&quot; preserve-order=&quot;true&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.turner.cnn.testscenarios.UserAuthorization&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;embedUserAuthorization&quot;/&gt;
+          &lt;include name=&quot;wireUserAuthorization&quot;/&gt;
+          &lt;include name=&quot;adminUserAuthorization&quot;/&gt;
+          &lt;include name=&quot;downloadUserAuthorization&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.turner.cnn.testscenarios.UserAuthorization --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Browser --&gt;
+&lt;/suite&gt; &lt;!-- Desktop --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Desktop" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Desktop</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Browser (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Desktop" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Desktop</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Desktop" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Desktop</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Desktop');
+function tableData_Desktop() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(4);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'wireUserAuthorization')
+data.setCell(0, 2, 'com.turner.cnn.testscenarios.UserAuthorization')
+data.setCell(0, 3, 31);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'downloadUserAuthorization')
+data.setCell(1, 2, 'com.turner.cnn.testscenarios.UserAuthorization')
+data.setCell(1, 3, 31);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'adminUserAuthorization')
+data.setCell(2, 2, 'com.turner.cnn.testscenarios.UserAuthorization')
+data.setCell(2, 3, 16);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'embedUserAuthorization')
+data.setCell(3, 2, 'com.turner.cnn.testscenarios.UserAuthorization')
+data.setCell(3, 3, 15);
+window.suiteTableData['Desktop']= { tableData: data, tableDiv: 'times-div-Desktop'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 93 ms</span>
+              <div id="times-div-Desktop">
+              </div> <!-- times-div-Desktop -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Desktop" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Desktop</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Desktop" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Desktop" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.turner.cnn.testscenarios.UserAuthorization</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">presteps(org.testng.TestRunner@196a42c3, cnn)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="test-method">
+                <span class="method-name">downloadUserAuthorization({Res_Width=, Description=Login with Download user and validate his authorization, OS=Windows, Platfo...)</span>
+                <span class="method-start">378 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">embedUserAuthorization({Res_Width=, Description=Login with Embed user and validate his authorization, OS=Windows, Platform=...)</span>
+                <span class="method-start">378 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">wireUserAuthorization({Res_Width=, Description=Login with Wire user and validate his authorization, OS=Windows, Platform=D...)</span>
+                <span class="method-start">378 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">adminUserAuthorization({Res_Width=, Description=Login with Admin user and validate his authorization, OS=Windows, Platform=...)</span>
+                <span class="method-start">393 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-suite after">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">poststeps(org.testng.TestRunner@196a42c3)</span>
+                <span class="method-start">534 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

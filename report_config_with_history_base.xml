@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+	<configuration>
+		<!-- report theme -->
+		<!-- standard, dark -->
+		<theme>dark</theme>
+
+		<!-- title of the document -->
+		<documentTitle>UM_v2.0</documentTitle>
+
+		<!-- report name - displayed at top-nav -->
+		<reportName>UM Report</reportName>
+
+		<!-- report headline - displayed at top-nav, after reportHeadline -->
+		<reportHeadline>Overall status of the automation run </reportHeadline>
+
+		<styles>
+      <![CDATA[
+      .button {
+			float: right;
+			color: #37474f;
+			font-weight:600;
+			font-family:inherit;
+			border-radius:3px;
+		}
+		.button:focus {
+			outline: none;
+		}
+		.button::before{
+			border-color: #7986cb;
+		}
+		.button:hover{
+			background-color:#37474f;
+			color:#7986cb;
+		}
+		/* The Modal (background) */
+		.hisPop {
+		    display: none; /* Hidden by default */
+		    position: fixed; /* Stay in place */
+		    z-index: 1; /* Sit on top */
+		    padding-top: 100px; /* Location of the box */
+		    left: 0;
+		    top: 0;
+		    width: 100%; /* Full width */
+		    height: 100%; /* Full height */
+		    overflow: auto; /* Enable scroll if needed */
+		    background-color: rgb(0,0,0); /* Fallback color */
+		    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+		
+		/* Modal Content */
+		.hisPop-content {
+		    position: relative;
+		    background-color: #fefefe;
+		    margin: auto;
+		    padding: 0;
+		    border: 1px solid #888;
+		    width: 80%;
+		    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+		    -webkit-animation-name: animatetop;
+		    -webkit-animation-duration: 0.4s;
+		    animation-name: animatetop;
+		    animation-duration: 0.4s
+		}
+		
+		/* Add Animation */
+		@-webkit-keyframes animatetop {
+		    from {top:-300px; opacity:0}
+		    to {top:0; opacity:1}
+		}
+		
+		@keyframes animatetop {
+		    from {top:-300px; opacity:0}
+		    to {top:0; opacity:1}
+		}
+		
+		/* The Close Button */
+		.hisPopClose {
+		    color: white;
+		    float: right;
+		    font-size: 28px;
+		    font-weight: bold;
+		}
+		
+		.hisPopClose:hover,
+		.hisPopClose:focus {
+		    color: #000;
+		    text-decoration: none;
+		    cursor: pointer;
+		}
+		
+		.hisPop-header {
+		    padding: 2px 16px;
+		    background-color: #4899ea;
+		    color: white;
+		}
+		
+		.hisPop-body {
+			padding: 2px 16px;
+			background: #222 none repeat scroll 0 0;
+		}
+		
+		.hisPop-footer {
+		    padding: 8px;
+		    background-color: #4899ea;
+		    color: white;
+		}
+		.hisPopTitle{
+			font-size: 2.56rem;
+			margin: 0.28rem 0 0.424rem;
+		}
+		table.hisPopTable td {
+		
+		}
+		.hisPop-body > p {
+			color: #f5f5f5;
+		}
+      ]]>
+		</styles>
+    <scripts>
+      <![CDATA[   	
+	    //JSON for the given testcases
+		var jsonVal = <JSONValue>
+		//Defining Global Variables
+		var hispop = "";
+		var sepName = "";
+		var	testName = "";
+		var	platformName = "";
+		var	browserName = "";
+		var	envName = "";
+		var report = "";
+		//function to create modal window for displaying results
+		function createModalWindow()
+		{
+			var popCont = document.createElement("div");
+			popCont.id = "myHisPop";
+			popCont.className = "hisPop";
+			popCont.innerHTML = '<div class="hisPop-content"><div class="hisPop-header"><span class="hisPopClose">X</span><h2 class="hisPopTitle">History</h2></div><div class="hisPop-body"><p></p></div><div class="hisPop-footer"><p></p></div></div>'
+			var popBody = document.body; 
+			popBody.insertBefore(popCont, null);
+			hisPop = document.getElementById('myHisPop');
+			var hisSpan = document.getElementsByClassName("hisPopClose")[0];
+			hisSpan.onclick = function() 
+			{
+			    hisPop.style.display = "none";
+			}
+			window.onclick = function(event) 
+			{
+			    if (event.target == hisPop) 
+				{
+				    hisPop.style.display = "none";
+				}
+			}
+		}
+		//function to create history button		    	
+		function createHistoryButton() 
+		{
+			//Selecting the testcase for which the history has to be generated    
+			var items = [];
+			items = document.querySelectorAll("div[id='test-details-wrapper'] div[class='collapsible-body']>div[class='test-steps']");
+			var itemsLen = items.length;
+			var i;
+			for(i=0; i<itemsLen; i++)
+			{
+				var node = document.createElement("BUTTON");
+				var textnode = document.createTextNode("View History");        
+				node.appendChild(textnode); 
+				items[i].insertBefore(node, items[i].firstChild);
+				var testNodeName = items[i].parentElement.previousElementSibling.querySelector('.test-node-name').textContent;
+				node.id = testNodeName;
+				//console.log(node.id);
+				node.className = "button";
+				//console.log(sepName, testName, platformName, browserName, envName);
+				var nodeName = node.id;
+				$(node).click(function()
+				{
+					checkAvailability(this);
+				});
+			}
+		}
+		//function to validate if the json has the given testcase details
+		function checkAvailability(getName)
+		{
+			var nodeId = getName.id;
+			sepName = nodeId.split(" ");
+			testName = sepName[0];
+			platformName = sepName[1];
+			browserName = sepName[2];
+			envName = sepName[3];
+			//console.log("Values in checkAvailability func");
+			//console.log(sepName, testName, platformName, browserName, envName);
+			if(jsonVal.UMReport.hasOwnProperty(testName) == false)
+			{
+				report = "This is the first time" + " " + testName + " " + "is executed"
+				hisCont = document.querySelector('.hisPop-body>p');
+				hisPop.style.display = "block";
+				hisCont.innerHTML = report;
+			}
+			else if(jsonVal.UMReport[testName].hasOwnProperty(platformName) == false)
+			{
+				report = "This is the first time" + " " + testName + " " + "is executed in" + " " + platformName + " "
+				hisCont = document.querySelector('.hisPop-body>p');
+				hisPop.style.display = "block";
+				hisCont.innerHTML = report;
+			}
+			else if(jsonVal.UMReport[testName][platformName].hasOwnProperty(browserName) == false)
+			{
+				report = "This is the first time" + " " + testName + " " + "is executed in" + " " + platformName + " " + "on" + " " + browserName + " "
+				hisCont = document.querySelector('.hisPop-body>p');
+				hisPop.style.display = "block";
+				hisCont.innerHTML = report;
+			}
+			else if(jsonVal.UMReport[testName][platformName][browserName].hasOwnProperty(envName) == false)
+			{
+				report = "This is the first time" + " " + testName + " " + "is executed in" + " " + platformName + " " + "on" + " " + browserName + " " + "under" + " " + envName + " "
+				hisCont = document.querySelector('.hisPop-body>p');
+				hisPop.style.display = "block";
+				hisCont.innerHTML = report;
+			}
+			else
+			{
+				generateHistory();
+			}
+		}
+		//function to generate the history contents from the given JSON
+		function generateHistory() 
+		{
+			//console.log("Values in generateHistory func");
+			//console.log(sepName, testName, platformName, browserName, envName);
+			//console.log(jsonVal.UMReport[testName][platformName][browserName][envName]);
+			var jLen = Object.keys(jsonVal.UMReport[testName][platformName][browserName][envName]).length;
+			var report = "<table class='hisPopTable'>" + "<thead>" + "<tr>" + "<th>" + "S.No" + "</th>" + "<th>" + "Test Name" + "</th>" + "<th>" + "Platform" + "</th>" + "<th>" + "Browser" + "</th>" + "<th>" + "Environment" + "</th>" + "<th>" + "Start Time" + "</th>" + "<th>" + "End Time" + "</th>" + "<th>" + "Duration" + "</th>" + "<th>" + "Status" + "</th>" + "<th>" + "Failed Step" + "</th>" + "</tr>" + "</thead>";
+			var i, n;
+			for (i = 0; i < jLen; i++) 
+			{
+				//console.log(jsonVal.UMReport[testName][platformName][browserName][envName][i]);
+				n = i + 1;
+				report += "<tr>" + "<td>" + n + "</td>" + "<td>" + testName + "</td>" + "<td>" + platformName + "</td>"  + "<td>" + browserName + "</td>" + "<td>" + envName + "</td>" + "<td>" + jsonVal.UMReport[testName][platformName][browserName][envName][i].StartTime + "</td>" + "<td>" + jsonVal.UMReport[testName][platformName][browserName][envName][i].EndTime + "</td>" + "<td>" + jsonVal.UMReport[testName][platformName][browserName][envName][i].Duration + "</td>" + "<td>" + jsonVal.UMReport[testName][platformName][browserName][envName][i].Status + "</td>" + "<td>" + jsonVal.UMReport[testName][platformName][browserName][envName][i].FailedStep + "</td>" + "</tr>";
+			}
+			report += "</table>";
+			//console.log(report);
+			hisCont = document.querySelector('.hisPop-body>p');
+			hisPop.style.display = "block";
+			hisCont.innerHTML = report;
+		}
+		//Adding view history buttons during on click of test suites
+		function applyHistory()
+		{
+			var liItems = []
+			liItems = document.querySelectorAll("li[class*='collection-item'][class*='test']");
+			var i;
+			for(i=0; i<liItems.length; i++)
+			{
+				liItems[i].onclick = createHistoryButton;
+			}
+		}
+		createModalWindow();
+		applyHistory();
+      ]]>
+    </scripts>
+	</configuration>
+</extentreports>

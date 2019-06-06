@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="12" parallel="tests" data-provider-thread-count="12" name="Failed suite [Desktop]">
+  <parameter name="ProjectName" value="cnn"/>
+  <test parallel="methods" name="Browser(failed)" preserve-order="true">
+    <classes>
+      <class name="com.turner.cnn.testscenarios.UserAuthorization">
+        <methods>
+          <include name="downloadUserAuthorization"/>
+          <include name="adminUserAuthorization"/>
+          <include name="presteps"/>
+          <include name="wireUserAuthorization"/>
+          <include name="poststeps"/>
+          <include name="embedUserAuthorization"/>
+        </methods>
+      </class> <!-- com.turner.cnn.testscenarios.UserAuthorization -->
+    </classes>
+  </test> <!-- Browser(failed) -->
+</suite> <!-- Failed suite [Desktop] -->

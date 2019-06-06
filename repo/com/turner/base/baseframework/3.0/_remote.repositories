@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jun 05 15:38:53 IST 2019
+baseframework-3.0.pom>=
+baseframework-3.0.jar>=

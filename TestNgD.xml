@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="12" name="Desktop" parallel="tests" data-provider-thread-count="12">
+  <parameter name="ProjectName" value="NewSourceWire"/>
+  <test thread-count="16" name="Browser" parallel="methods" preserve-order="true">
+    <classes>
+      <class name="com.turner.cnn.testscenarios.UserAuthorization">
+        <methods>
+          <include name="datelineErrorValidation"/>
+          <include name="bylineErrorValidation"/>
+          <include name="headlineErrorValidation"/>
+          <include name="invalidEmailValidation"/>
+          <include name="invalidSubmitbutton"/>
+          <include name="slugErrorValidation"/>
+          <include name="wireUserAuthorization"/>
+          <include name="stateErrorValidation"/>
+          <include name="onlySubmitValidation"/>
+          <include name="submitButtonValidation"/>
+          <include name="bodyTextErrorValidation"/>
+          <include name="clearButtonValidation"/>
+        </methods>
+      </class> <!-- com.turner.cnn.testscenarios.UserAuthorization -->
+    </classes>
+  </test> <!-- Browser -->
+</suite> <!-- Desktop -->

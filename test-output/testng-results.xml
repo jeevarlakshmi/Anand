@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="4" passed="0" failed="0" skipped="4">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2019-03-19T06:59:19Z" name="Desktop" finished-at="2019-03-19T06:59:20Z" duration-ms="297">
+    <groups>
+    </groups>
+    <test started-at="2019-03-19T06:59:19Z" name="Browser" finished-at="2019-03-19T06:59:20Z" duration-ms="297">
+      <class name="com.turner.cnn.testscenarios.UserAuthorization">
+        <test-method is-config="true" signature="presteps(org.testng.ITestContext, java.lang.String)[pri:0, instance:com.turner.cnn.testscenarios.UserAuthorization@66498326]" started-at="2019-03-19T12:29:19Z" name="presteps" finished-at="2019-03-19T12:29:19Z" duration-ms="0" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@196a42c3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[cnn]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at com.turner.base.utilities.support.UMReporter.initReport(UMReporter.java:59)
+	at com.turner.cnn.testscenarios.BaseTest.presteps(BaseTest.java:56)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:277)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:51)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:85)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1197)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1122)
+	at org.testng.TestNG.run(TestNG.java:1030)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- presteps -->
+        <test-method is-config="true" signature="initParentRep(org.testng.ITestContext)[pri:0, instance:com.turner.cnn.testscenarios.UserAuthorization@66498326]" started-at="2019-03-19T12:29:19Z" name="initParentRep" finished-at="2019-03-19T12:29:19Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initParentRep -->
+        <test-method is-config="true" signature="setUp([Ljava.lang.Object;, org.testng.ITestContext, java.lang.reflect.Method)[pri:0, instance:com.turner.cnn.testscenarios.UserAuthorization@66498326]" started-at="2019-03-19T12:29:19Z" name="setUp" finished-at="2019-03-19T12:29:19Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp([Ljava.lang.Object;, org.testng.ITestContext, java.lang.reflect.Method)[pri:0, instance:com.turner.cnn.testscenarios.UserAuthorization@66498326]" started-at="2019-03-19T12:29:19Z" name="setUp" finished-at="2019-03-19T12:29:19Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp([Ljava.lang.Object;, org.testng.ITestContext, java.lang.reflect.Method)[pri:0, instance:com.turner.cnn.testscenarios.UserAuthorization@66498326]" started-at="2019-03-19T12:29:20Z" name="setUp" finished-at="2019-03-19T12:29:20Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp([Ljava.lang.Object;, org.testng.ITestContext, java.lang.reflect.Method)[pri:0, instance:com.turner.cnn.testscenarios.UserAuthorization@66498326]" started-at="2019-03-19T12:29:20Z" name="setUp" finished-at="2019-03-19T12:29:20Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="embedUserAuthorization(java.util.Map, java.util.Map, org.testng.ITestContext)[pri:0, instance:com.turner.cnn.testscenarios.UserAuthorization@66498326]" started-at="2019-03-19T12:29:20Z" name="embedUserAuthorization" data-provider="GlobalTestData" finished-at="2019-03-19T12:29:20Z" duration-ms="15" status="SKIP">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Res_Width=, Description=Login with Embed user and validate his authorization, OS=Windows, Platform=Desktop, Version=null, Driver=Chrome, Environment=QA, Screenshot for Pass=NO, Res_Height=, Browser=Chrome}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{Single=iteration}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[org.testng.TestRunner@196a42c3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- embedUserAuthorization -->
+        <test-method signature="wireUserAuthorization(java.util.Map, java.util.Map, org.testng.ITestContext)[pri:0, instance:com.turner.cnn.testscenarios.UserAuthorization@66498326]" started-at="2019-03-19T12:29:20Z" name="wireUserAuthorization" data-provider="GlobalTestData" finished-at="2019-03-19T12:29:20Z" duration-ms="31" status="SKIP">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Res_Width=, Description=Login with Wire user and validate his authorization, OS=Windows, Platform=Desktop, Version=null, Driver=Chrome, Environment=QA, Screenshot for Pass=NO, Res_Height=, Browser=Chrome}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{Single=iteration}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[org.testng.TestRunner@196a42c3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- wireUserAuthorization -->
+        <test-method signature="downloadUserAuthorization(java.util.Map, java.util.Map, org.testng.ITestContext)[pri:0, instance:com.turner.cnn.testscenarios.UserAuthorization@66498326]" started-at="2019-03-19T12:29:20Z" name="downloadUserAuthorization" data-provider="GlobalTestData" finished-at="2019-03-19T12:29:20Z" duration-ms="31" status="SKIP">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Res_Width=, Description=Login with Download user and validate his authorization, OS=Windows, Platform=Desktop, Version=null, Driver=Chrome, Environment=QA, Screenshot for Pass=NO, Res_Height=, Browser=Chrome}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{Single=iteration}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[org.testng.TestRunner@196a42c3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- downloadUserAuthorization -->
+        <test-method signature="adminUserAuthorization(java.util.Map, java.util.Map, org.testng.ITestContext)[pri:0, instance:com.turner.cnn.testscenarios.UserAuthorization@66498326]" started-at="2019-03-19T12:29:20Z" name="adminUserAuthorization" data-provider="GlobalTestData" finished-at="2019-03-19T12:29:20Z" duration-ms="16" status="SKIP">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Res_Width=, Description=Login with Admin user and validate his authorization, OS=Windows, Platform=Desktop, Version=null, Driver=Chrome, Environment=QA, Screenshot for Pass=NO, Res_Height=, Browser=Chrome}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{Single=iteration}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[org.testng.TestRunner@196a42c3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminUserAuthorization -->
+        <test-method is-config="true" signature="tearUp(org.testng.ITestContext, java.lang.reflect.Method)[pri:0, instance:com.turner.cnn.testscenarios.UserAuthorization@66498326]" started-at="2019-03-19T12:29:20Z" name="tearUp" finished-at="2019-03-19T12:29:20Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearUp -->
+        <test-method is-config="true" signature="tearUp(org.testng.ITestContext, java.lang.reflect.Method)[pri:0, instance:com.turner.cnn.testscenarios.UserAuthorization@66498326]" started-at="2019-03-19T12:29:20Z" name="tearUp" finished-at="2019-03-19T12:29:20Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearUp -->
+        <test-method is-config="true" signature="tearUp(org.testng.ITestContext, java.lang.reflect.Method)[pri:0, instance:com.turner.cnn.testscenarios.UserAuthorization@66498326]" started-at="2019-03-19T12:29:20Z" name="tearUp" finished-at="2019-03-19T12:29:20Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearUp -->
+        <test-method is-config="true" signature="endParentRepo(org.testng.ITestContext)[pri:0, instance:com.turner.cnn.testscenarios.UserAuthorization@66498326]" started-at="2019-03-19T12:29:20Z" name="endParentRepo" finished-at="2019-03-19T12:29:20Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endParentRepo -->
+        <test-method is-config="true" signature="tearUp(org.testng.ITestContext, java.lang.reflect.Method)[pri:0, instance:com.turner.cnn.testscenarios.UserAuthorization@66498326]" started-at="2019-03-19T12:29:20Z" name="tearUp" finished-at="2019-03-19T12:29:20Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearUp -->
+        <test-method is-config="true" signature="poststeps(org.testng.ITestContext)[pri:0, instance:com.turner.cnn.testscenarios.UserAuthorization@66498326]" started-at="2019-03-19T12:29:20Z" name="poststeps" finished-at="2019-03-19T12:29:20Z" duration-ms="0" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@196a42c3]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.IllegalStateException">
+            <message>
+              <![CDATA[No reporters were started. Atleast 1 reporter must be started to flush results.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalStateException: No reporters were started. Atleast 1 reporter must be started to flush results.
+	at com.aventstack.extentreports.Report.flush(Report.java:166)
+	at com.aventstack.extentreports.ExtentReports.flush(ExtentReports.java:272)
+	at com.turner.base.utilities.support.UMReporter.endReport(UMReporter.java:210)
+	at com.turner.cnn.testscenarios.BaseTest.poststeps(BaseTest.java:83)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:308)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:51)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:85)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1197)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1122)
+	at org.testng.TestNG.run(TestNG.java:1030)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalStateException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- poststeps -->
+      </class> <!-- com.turner.cnn.testscenarios.UserAuthorization -->
+    </test> <!-- Browser -->
+  </suite> <!-- Desktop -->
+</testng-results>
